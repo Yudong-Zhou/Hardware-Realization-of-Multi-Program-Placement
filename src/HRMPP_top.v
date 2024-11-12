@@ -28,6 +28,7 @@ module HRMPP_top (
     wire [7 : 0]    occupied_width_write_index;
     wire [7 : 0]    occupied_width_index;
 
+    wire            strike_flag;
     wire [3 : 0]    strike_write_index;
     wire [3 : 0]    strike_index;
     wire [3 : 0]    strike_index_output;
@@ -66,6 +67,7 @@ module HRMPP_top (
         .strip_ID_in(strip_ID_index),
         .occupied_width_in(occupied_width_index),
         .strike_in(strike_index),
+        .strike_flag_in(strike_flag),
         .x_out(x_index_output),
         .y_out(y_index_output),
         .strike_out(strike_index_output)

@@ -13,6 +13,7 @@ module find_index (
     input [3 : 0]       strip_ID_in,
     input [7 : 0]       occupied_width_in,
     input [3 : 0]       strike_in,
+    input               strike_flag_in,
 
     // output signals
     output reg [7 : 0]  x_out,
@@ -21,7 +22,7 @@ module find_index (
 );
 
     always @(*) begin
-        if(strike_in > 0) begin
+        if(strike_flag_in) begin
             x_out <= 128;
             y_out <= 128;
         end
