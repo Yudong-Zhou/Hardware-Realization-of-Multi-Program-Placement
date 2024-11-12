@@ -16,8 +16,8 @@ module Mid_Part_TopModule(
     new_occupied_strip_width
 );
 
-    input clk,
-    input rst,
+    input clk;
+    input rst;
 
     input [3:0] strip_id_1;
     input [3:0] strip_id_2;
