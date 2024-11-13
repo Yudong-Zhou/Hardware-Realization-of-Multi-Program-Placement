@@ -11,7 +11,7 @@ module Strike_Counter(
     input clk;
     input rst; //high active
 
-    output [3:0] strike_count;
+    output reg [3:0] strike_count;
 
     always @(posedge clk) begin
         if (rst) strike_count <= 0;

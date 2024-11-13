@@ -8,10 +8,10 @@ module Mid_Part_TopModule(
     occupied_width_1,
     occupied_width_2,
     occupied_width_3,
-    width_in
+    width_in,
 
     min_occupied_strip_id,
-    min_occupied_strip_width
+    min_occupied_strip_width,
     strike_flag,
     new_occupied_strip_width
 );
@@ -63,7 +63,7 @@ module Mid_Part_TopModule(
 
     wire [3:0] min_occupied_strip_id_s5;
 
-    P1_Reg_4_bit  u_min_occupied_strip_width_s4 (
+    P1_Reg_4_bit  u_min_occupied_strip_id_s4 (
         .DataIn                  ( min_occupied_strip_id_s4 ),
         .rst                     ( rst                      ),
         .clk                     ( clk                      ),
@@ -83,7 +83,7 @@ module Mid_Part_TopModule(
 
     wire [7:0] width_in_s5;
 
-    P1_Reg_8_bit  u_min_occupied_strip_width_s4 (
+    P1_Reg_8_bit  u_width_in_s4 (
         .DataIn                  ( width_in     ),
         .rst                     ( rst          ),
         .clk                     ( clk          ),
@@ -107,7 +107,7 @@ module Mid_Part_TopModule(
 
     //wire [3:0] min_occupied_strip_id_s6;
 
-    P1_Reg_4_bit  u_min_occupied_strip_width_s5 (
+    P1_Reg_4_bit  u_min_occupied_strip_id_s5 (
         .DataIn                  ( min_occupied_strip_id_s5 ),
         .rst                     ( rst                      ),
         .clk                     ( clk                      ),
@@ -127,7 +127,7 @@ module Mid_Part_TopModule(
 
     //wire [7:0] new_occupied_strip_width_s6;
 
-    P1_Reg_8_bit  u_min_occupied_strip_width_s5 (
+    P1_Reg_8_bit  u_new_occupied_strip_width_s5 (
         .DataIn                  ( new_occupied_strip_width_s5  ),
         .rst                     ( rst                          ),
         .clk                     ( clk                          ),
