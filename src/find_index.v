@@ -12,13 +12,13 @@ module find_index (
     // input signals
     input [3 : 0]       strip_ID_in,
     input [7 : 0]       occupied_width_in,
-    input [3 : 0]       strike_in,
+    //input [3 : 0]       strike_in,
     input               strike_flag_in,
 
     // output signals
     output reg [7 : 0]  x_out,
     output reg [7 : 0]  y_out,
-    output reg [3 : 0]  strike_out
+    //output reg [3 : 0]  strike_out
 );
 
     always @(*) begin
@@ -44,13 +44,12 @@ module find_index (
                 'd13:   y_out <= 112;
                 default: y_out <= 0;
             endcase
-            // calculate x: whether -1 depends on how to store occupied width in register_array
+            // calculate x: whether +1 depends on how to store occupied width in register_array
             //             (from 0 or from 1)
             x_out <= occupied_width_in; // (from 0)
-            // x_out <= occupied_width_in - 1; // (from 1)
+            // x_out <= occupied_width_in + 1; // (from 1)
         end
-
-        strike_out <= strike_in;
+        //strike_out <= strike_in;
     end
 
 endmodule
