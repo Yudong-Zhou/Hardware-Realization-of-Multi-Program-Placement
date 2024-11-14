@@ -17,7 +17,7 @@ module find_index (
 
     // output signals
     output reg [7 : 0]  x_out,
-    output reg [7 : 0]  y_out,
+    output reg [7 : 0]  y_out
     //output reg [3 : 0]  strike_out
 );
 

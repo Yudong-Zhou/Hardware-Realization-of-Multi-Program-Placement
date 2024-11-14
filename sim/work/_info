@@ -1,0 +1,309 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/SOFTWARE/Modelsim/examples
+vEnd_Part_TopModule
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+31
+!i10b 1
+!s100 I6M@:HNSGOScNP:cOk>D32
+IV8=Q@O6_`hzYLTEiQHLko0
+Z1 dE:/UCLA/Codes/zyd_github/HRMPP/sim
+w1731563975
+8E:/UCLA/Codes/zyd_github/HRMPP/src/End_Part_TopModule.v
+FE:/UCLA/Codes/zyd_github/HRMPP/src/End_Part_TopModule.v
+Z2 L0 11
+Z3 OL;L;10.4;61
+!s108 1731564404.182000
+!s107 E:/UCLA/Codes/zyd_github/HRMPP/src/End_Part_TopModule.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/HRMPP/src/End_Part_TopModule.v|
+!i113 0
+Z4 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+n@end_@part_@top@module
+vfind_index
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 KII?4c4Vo>mEi[cn;5U2g1
+IcPJmiF:@V2Gzo2JaQM<Y?3
+R1
+w1731563323
+8E:/UCLA/Codes/zyd_github/HRMPP/src/find_index.v
+FE:/UCLA/Codes/zyd_github/HRMPP/src/find_index.v
+R2
+R3
+!s108 1731564404.369000
+!s107 E:/UCLA/Codes/zyd_github/HRMPP/src/find_index.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/HRMPP/src/find_index.v|
+!i113 0
+R4
+vFind_Row
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 @8SdD`7fPzF=EV545[bL_1
+IZl7AlPMI:eIAP1STA6EOg1
+R1
+w1731476381
+8E:/UCLA/Codes/zyd_github/HRMPP/src/Find_Row.v
+FE:/UCLA/Codes/zyd_github/HRMPP/src/Find_Row.v
+L0 1
+R3
+!s108 1731564404.598000
+!s107 E:/UCLA/Codes/zyd_github/HRMPP/src/Find_Row.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/HRMPP/src/Find_Row.v|
+!i113 0
+R4
+n@find_@row
+vFront_Topmodule
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 7NNHkM>3EHJ>;7TE`ZL@a1
+I=_Y?PME3KfQ9A2BDbI5c@2
+R1
+w1731563786
+8E:/UCLA/Codes/zyd_github/HRMPP/src/Front_Topmodule.v
+FE:/UCLA/Codes/zyd_github/HRMPP/src/Front_Topmodule.v
+L0 1
+R3
+!s108 1731564404.793000
+!s107 E:/UCLA/Codes/zyd_github/HRMPP/src/Front_Topmodule.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/HRMPP/src/Front_Topmodule.v|
+!i113 0
+R4
+n@front_@topmodule
+vM216A_TB
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 3^4S>E5aYG7QTFA14J1`c1
+IFKR[W[>oUeii1HLii3eDJ1
+R1
+w1731563641
+8E:/UCLA/Codes/zyd_github/HRMPP/src/M216A_TB.v
+FE:/UCLA/Codes/zyd_github/HRMPP/src/M216A_TB.v
+L0 3
+R3
+!s108 1731564404.970000
+!s107 E:/UCLA/Codes/zyd_github/HRMPP/src/M216A_TB.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/HRMPP/src/M216A_TB.v|
+!i113 0
+R4
+n@m216@a_@t@b
+vMid_Part_TopModule
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 fZ_R:>m8l3BlZJY;Ca2]=0
+IB6GV0K@eNZaAc[RmBITab1
+R1
+w1731564155
+8E:/UCLA/Codes/zyd_github/HRMPP/src/Mid_Part_TopModule.v
+FE:/UCLA/Codes/zyd_github/HRMPP/src/Mid_Part_TopModule.v
+L0 1
+R3
+!s108 1731564405.134000
+!s107 E:/UCLA/Codes/zyd_github/HRMPP/src/Mid_Part_TopModule.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/HRMPP/src/Mid_Part_TopModule.v|
+!i113 0
+R4
+n@mid_@part_@top@module
+vMin_Occupied_Strip_Selector
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 iS@SLoC@@T=4;T2gD>ZRA2
+I;<Ecf]ZXz?d8Z2VQA8P_h2
+R1
+w1731563191
+8E:/UCLA/Codes/zyd_github/HRMPP/src/Min_Occupied_Strip_Selector.v
+FE:/UCLA/Codes/zyd_github/HRMPP/src/Min_Occupied_Strip_Selector.v
+L0 1
+R3
+!s108 1731564405.316000
+!s107 E:/UCLA/Codes/zyd_github/HRMPP/src/Min_Occupied_Strip_Selector.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/HRMPP/src/Min_Occupied_Strip_Selector.v|
+!i113 0
+R4
+n@min_@occupied_@strip_@selector
+vMin_Occupied_Width_No
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 AVJLFMJKNTofN9c]BeS8Y2
+In:G<oHGld6hOlN^1g[8Bc0
+R1
+w1731460496
+8E:/UCLA/Codes/zyd_github/HRMPP/src/Min_Occupied_Width_No.v
+FE:/UCLA/Codes/zyd_github/HRMPP/src/Min_Occupied_Width_No.v
+L0 1
+R3
+!s108 1731564405.510000
+!s107 E:/UCLA/Codes/zyd_github/HRMPP/src/Min_Occupied_Width_No.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/HRMPP/src/Min_Occupied_Width_No.v|
+!i113 0
+R4
+n@min_@occupied_@width_@no
+vP1_Reg_1_bit
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 >Y?3fS<mjMFQ<hU2fN3f@3
+I;WJTLG^8Wc;mCDNfakhCV3
+R1
+w1731459491
+8E:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_1_bit.v
+FE:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_1_bit.v
+L0 3
+R3
+!s108 1731564405.695000
+!s107 E:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_1_bit.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_1_bit.v|
+!i113 0
+R4
+n@p1_@reg_1_bit
+vP1_Reg_4_bit
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 JG>I2PXnY8OiS;?Q87dd73
+IFoz4<II6K<9_LZg]elHJI3
+R1
+w1731458123
+8E:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_4_bit.v
+FE:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_4_bit.v
+L0 3
+R3
+!s108 1731564405.875000
+!s107 E:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_4_bit.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_4_bit.v|
+!i113 0
+R4
+n@p1_@reg_4_bit
+vP1_Reg_5_bit
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 41SmUl_V1[GOz_TeficEd3
+IQ`A8OBk_3iAje:cnj:?bV1
+R1
+w1731458092
+8E:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_5_bit.v
+FE:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_5_bit.v
+L0 3
+R3
+!s108 1731564406.057000
+!s107 E:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_5_bit.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_5_bit.v|
+!i113 0
+R4
+n@p1_@reg_5_bit
+vP1_Reg_8_bit
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 N@6PDlbQo5DV:[5nl^KX>1
+I]DnD]^Ze0S0ITPbSA>ln@0
+R1
+w1731458065
+8E:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_8_bit.v
+FE:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_8_bit.v
+L0 3
+R3
+!s108 1731564406.253000
+!s107 E:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_8_bit.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_8_bit.v|
+!i113 0
+R4
+n@p1_@reg_8_bit
+vStrike_Counter
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 g79BkkRVZ5zX2Tj9?F6FH0
+IINX_OZOL9REA_JcMiN;^g2
+R1
+w1731458999
+8E:/UCLA/Codes/zyd_github/HRMPP/src/Strike_Counter.v
+FE:/UCLA/Codes/zyd_github/HRMPP/src/Strike_Counter.v
+L0 2
+R3
+!s108 1731564406.437000
+!s107 E:/UCLA/Codes/zyd_github/HRMPP/src/Strike_Counter.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/HRMPP/src/Strike_Counter.v|
+!i113 0
+R4
+n@strike_@counter
+vStrike_Detector
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 z6>`Ei_G:@dcjS8`FlIBM2
+IVbMEIA6VC765EDHE^I:1<3
+R1
+w1731562619
+8E:/UCLA/Codes/zyd_github/HRMPP/src/Strike_Detector.v
+FE:/UCLA/Codes/zyd_github/HRMPP/src/Strike_Detector.v
+L0 1
+R3
+!s108 1731564406.593000
+!s107 E:/UCLA/Codes/zyd_github/HRMPP/src/Strike_Detector.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/HRMPP/src/Strike_Detector.v|
+!i113 0
+R4
+n@strike_@detector
+vTop_module
+R0
+r1
+!s85 0
+31
+!i10b 1
+!s100 d6Cc`Cjj^chEl3daI3N`33
+IU^h<FD:egGGPLmNFdaSnV2
+R1
+w1731564198
+8E:/UCLA/Codes/zyd_github/HRMPP/src/Top_module.v
+FE:/UCLA/Codes/zyd_github/HRMPP/src/Top_module.v
+L0 1
+R3
+!s108 1731564404.008000
+!s107 E:/UCLA/Codes/zyd_github/HRMPP/src/Top_module.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|E:/UCLA/Codes/zyd_github/HRMPP/src/Top_module.v|
+!i113 0
+R4
+n@top_module
