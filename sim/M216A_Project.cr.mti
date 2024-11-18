@@ -33,6 +33,13 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	P1_Reg_4_bit
 
+} {} {}} E:/UCLA/Codes/zyd_github/HRMPP/src/Find_Row.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/HRMPP/src/Find_Row.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Find_Row
+
+Top level modules:
+	Find_Row
+
 } {} {}} E:/UCLA/Codes/zyd_github/HRMPP/src/Mid_Part_TopModule.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/HRMPP/src/Mid_Part_TopModule.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module Mid_Part_TopModule
@@ -46,13 +53,6 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 
 Top level modules:
 	find_index
-
-} {} {}} E:/UCLA/Codes/zyd_github/HRMPP/src/Find_Row.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/HRMPP/src/Find_Row.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module Find_Row
-
-Top level modules:
-	Find_Row
 
 } {} {}} E:/UCLA/Codes/zyd_github/HRMPP/src/Min_Occupied_Strip_Selector.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/HRMPP/src/Min_Occupied_Strip_Selector.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014

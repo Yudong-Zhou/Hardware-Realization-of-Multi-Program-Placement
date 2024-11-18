@@ -24,8 +24,19 @@ reg [31:0] file_data_input;
 reg [31:0] file_data_output;
 reg first_iteration = 1'b1;
 
-
+/*
 M216A_TopModule uut (
+  .clk_i(clk),
+  .rst_i(rst),
+  .height_i(height_i),
+  .width_i(width_i),
+  .strike_o(strike_o),
+  .index_x_o(index_x_o),
+  .index_y_o(index_y_o)
+);
+*/
+
+Top_module uut (
   .clk_i(clk),
   .rst_i(rst),
   .height_i(height_i),

@@ -59,6 +59,7 @@ module Front_Topmodule(
 
     always @(posedge clk)
     begin
+        occupied_width[0] <= 8'd128;
         if (internal_str_id_1 != 0)
             occ_width_1_reg <= occupied_width[internal_str_id_1];
         if (internal_str_id_2 != 0)
