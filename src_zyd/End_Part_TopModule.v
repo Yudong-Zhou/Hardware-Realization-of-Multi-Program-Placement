@@ -20,9 +20,9 @@ module End_Part_TopModule (
     input [3 : 0]       strike_counter_write,
 
     // output signals
-    output [7 : 0]  index_x_output,
-    output [7 : 0]  index_y_output,
-    output [3 : 0]  strike_counter_output
+    output [7 : 0]      index_x_output,
+    output [7 : 0]      index_y_output,
+    output [3 : 0]      strike_counter_output
 );
     
     wire [3 : 0]        strip_ID_index;
@@ -44,7 +44,7 @@ module End_Part_TopModule (
     // write to register array
 
     always @(posedge clk) begin
-        register_array[strip_ID_write] <= new_occupied_width_write - 1; // store occupied width from 0
+        register_array[strip_ID_write] <= new_occupied_width_write; // store occupied width from 0
     end
 
 //////////////////////////////////////////////////////////

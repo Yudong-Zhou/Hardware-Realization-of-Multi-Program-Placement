@@ -46,7 +46,7 @@ module find_index (
             endcase
             // calculate x: whether +1 depends on how to store occupied width in register_array
             //             (from 0 or from 1)
-            x_out <= occupied_width_in; // (from 0)
+            x_out <= occupied_width_in + 1; // (from 0)
             // x_out <= occupied_width_in + 1; // (from 1)
         end
         //strike_out <= strike_in;

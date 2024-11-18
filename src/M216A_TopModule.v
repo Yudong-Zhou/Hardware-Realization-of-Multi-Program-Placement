@@ -367,7 +367,7 @@ module M216A_TopModule(
     // write to register array
 
     always @(posedge clk_i) begin
-        occupied_width[min_occupied_strip_id] <= new_occupied_strip_width - 1; // store occupied width from 0
+        occupied_width[min_occupied_strip_id] <= new_occupied_strip_width; // store occupied width from 0
     end
 
 //////////////////////////////////////////////////////////
