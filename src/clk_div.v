@@ -29,14 +29,7 @@ module clk_div(
     reg         clk2;
     reg         clk3;
     reg         clk4;
-    /*
-    always @(negedge rst_in) begin
-        clk1    <= 1'b0;
-        clk2    <= 1'b0;
-        clk3    <= 1'b0;
-        clk4    <= 1'b0;
-    end
-    */
+
     always @(posedge clk_in) begin
         if (rst_in) begin
             current_state = 2'b00;
@@ -80,16 +73,7 @@ module clk_div(
             current_state = next_state;
         end
     end
-    /*
-    always @(negedge clk_in) begin
-        if(~rst_in) begin
-            if      (clk1)  clk1 <= 1'b0;
-            else if (clk2)  clk2 <= 1'b0;
-            else if (clk3)  clk3 <= 1'b0;
-            else if (clk4)  clk4 <= 1'b0;
-        end
-    end
-    */
+
     assign clk1_out = clk2;
     assign clk2_out = clk3;
     assign clk3_out = clk4;

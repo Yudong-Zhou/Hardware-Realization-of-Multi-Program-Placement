@@ -206,34 +206,7 @@ module M216A_TopModule(
         .data_out2  (occ_width_2_reg        ),
         .data_out3  (occ_width_3_reg        )
     );
-    /*
-    always @(posedge clk3) begin
-        if (rst_i) begin
-            occupied_width[0]   <= 8'd128;
-            occupied_width[1]   <= 0;
-            occupied_width[2]   <= 0;
-            occupied_width[3]   <= 0;
-            occupied_width[4]   <= 0;
-            occupied_width[5]   <= 0;
-            occupied_width[6]   <= 0;
-            occupied_width[7]   <= 0;
-            occupied_width[8]   <= 0;
-            occupied_width[9]   <= 0;
-            occupied_width[10]  <= 0;
-            occupied_width[11]  <= 0;
-            occupied_width[12]  <= 0;
-            occupied_width[13]  <= 0;
-        end
-    end
 
-    always @(*) begin
-        if (read_en) begin
-            occ_width_1_reg <= occupied_width[find_row_strip_id_1];
-            occ_width_2_reg <= occupied_width[find_row_strip_id_2];
-            occ_width_3_reg <= occupied_width[find_row_strip_id_3];
-        end
-    end
-    */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
     // pipeline registers between read reg arr and min occupied width
 
@@ -264,28 +237,7 @@ module M216A_TopModule(
         .DataIn     (find_row_strip_id_3    ), 
         .DataOut    (str_id_3               )
     );
-    /*
-    P1_Reg_8_bit read_arr_occ_width_1_reg (
-        .clk        (clk3                   ),
-        .rst        (rst_i                  ),
-        .DataIn     (occ_width_1_reg        ), 
-        .DataOut    (occ_width_1            )
-    );
 
-    P1_Reg_8_bit read_arr_occ_width_2_reg (
-        .clk        (clk3                   ),
-        .rst        (rst_i                  ),
-        .DataIn     (occ_width_2_reg        ), 
-        .DataOut    (occ_width_2            )
-    );
-
-    P1_Reg_8_bit read_arr_occ_width_3_reg (
-        .clk        (clk3                   ),
-        .rst        (rst_i                  ),
-        .DataIn     (occ_width_3_reg        ), 
-        .DataOut    (occ_width_3            )
-    );
-    */
     assign occ_width_1 = occ_width_1_reg;
     assign occ_width_2 = occ_width_2_reg;
     assign occ_width_3 = occ_width_3_reg;
@@ -387,13 +339,7 @@ module M216A_TopModule(
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
     // write to register array
-    /*
-    always @(posedge clk2) begin
-        if (min_occupied_strip_id && (~rst_i) && write_en) begin
-            occupied_width[min_occupied_strip_id] <= new_occupied_strip_width;
-        end
-    end
-    */
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
     // pipeline registers between write and index
 

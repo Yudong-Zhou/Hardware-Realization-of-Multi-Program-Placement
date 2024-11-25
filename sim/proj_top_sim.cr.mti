@@ -12,13 +12,6 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	M216A_TB
 
-} {} {}} E:/UCLA/Codes/zyd_github/HRMPP/src/M216A_TopModule.v {1 {vlog -work work -vopt -stats=none {E:\UCLA\Codes\zyd_github\HRMPP\src\M216A_TopModule.v}
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module M216A_TopModule
-
-Top level modules:
-	M216A_TopModule
-
 } {} {}} E:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_4_bit.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_4_bit.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module P1_Reg_4_bit
@@ -61,6 +54,13 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	Find_Row
 
+} {} {}} E:/UCLA/Codes/zyd_github/HRMPP/src/Strike_Counter.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/HRMPP/src/Strike_Counter.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module Strike_Counter
+
+Top level modules:
+	Strike_Counter
+
 } {} {}} E:/UCLA/Codes/zyd_github/HRMPP/src/r_w_en.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/HRMPP/src/r_w_en.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module r_w_enable
@@ -88,12 +88,5 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 
 Top level modules:
 	P1_Reg_8_bit
-
-} {} {}} E:/UCLA/Codes/zyd_github/HRMPP/src/clk_div.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/HRMPP/src/clk_div.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module clk_div
-
-Top level modules:
-	clk_div
 
 } {} {}}
