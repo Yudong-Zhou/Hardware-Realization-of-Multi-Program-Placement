@@ -35,12 +35,6 @@ module M216A_TopModule(
     output [7 : 0]  index_y_o,
     output [3 : 0]  strike_o
 );
-
-    // clock division module
-    wire            clk1;
-    wire            clk2;
-    wire            clk3;
-    wire            clk4;
     
     // Input sampling stage
     wire [4 : 0]    height_input;
@@ -57,11 +51,12 @@ module M216A_TopModule(
     wire [3 : 0]    find_row_strip_id_3;
 
     // Read reg arr stage
+    wire [4 : 0]    read_arr_stage_height;
     wire [4 : 0]    read_arr_stage_width;
     wire [4 : 0]    width_front;
-    wire  [7 : 0]   occ_width_1_reg;
-    wire  [7 : 0]   occ_width_2_reg;
-    wire  [7 : 0]   occ_width_3_reg;
+    reg  [7 : 0]    occ_width_1_reg;
+    reg  [7 : 0]    occ_width_2_reg;
+    reg  [7 : 0]    occ_width_3_reg;
     reg  [7 : 0]    occupied_width [0 : 13];
 
     // Min occupied width Combinational Logics
@@ -104,30 +99,18 @@ module M216A_TopModule(
     wire [7 : 0]    y_outstage;
     wire [3 : 0]    strike_counter_outstage;
 
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Clock division module
-    clk_div clk_div_inst (
-        .clk_in     (clk_i  ),
-        .rst_in     (rst_i  ),
-        .clk1_out   (clk1   ),
-        .clk2_out   (clk2   ),
-        .clk3_out   (clk3   ),
-        .clk4_out   (clk4   )
-    );
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
     // Input sampling stage
 
     P1_Reg_5_bit height_in_reg (
-        .clk        (clk1          ),
+        .clk        (clk_i          ),
         .rst        (rst_i          ), 
         .DataIn     (height_i       ), 
         .DataOut    (height_input   )
     );
     
     P1_Reg_5_bit width_in_reg (
-        .clk        (clk1          ),
+        .clk        (clk_i          ),
         .rst        (rst_i          ), 
         .DataIn     (width_i        ), 
         .DataOut    (width_input    )
@@ -148,35 +131,35 @@ module M216A_TopModule(
     // pipeline registers between find row and read reg arr
 
     P1_Reg_5_bit find_row_height_reg (
-        .clk        (clk2                   ),
+        .clk        (clk_i                  ),
         .rst        (rst_i                  ), 
         .DataIn     (height_input           ),
         .DataOut    (row_stage_height       )
     );
 
     P1_Reg_5_bit find_row_width_reg (
-        .clk        (clk2                   ),
+        .clk        (clk_i                  ),
         .rst        (rst_i                  ), 
         .DataIn     (width_input            ), 
         .DataOut    (row_stage_width        )
     ); 
 
     P1_Reg_4_bit find_row_str_id_1_reg (
-        .clk        (clk2                   ),
+        .clk        (clk_i                  ),
         .rst        (rst_i                  ), 
         .DataIn     (internal_str_id_1      ), 
         .DataOut    (find_row_strip_id_1    )
     );
 
     P1_Reg_4_bit find_row_str_id_2_reg (
-        .clk        (clk2                   ),
+        .clk        (clk_i                  ),
         .rst        (rst_i                  ), 
         .DataIn     (internal_str_id_2      ), 
         .DataOut    (find_row_strip_id_2    )
     );
 
     P1_Reg_4_bit find_row_str_id_3_reg (
-        .clk        (clk2                   ),
+        .clk        (clk_i                  ),
         .rst        (rst_i                  ),
         .DataIn     (internal_str_id_3      ), 
         .DataOut    (find_row_strip_id_3    )
@@ -185,29 +168,7 @@ module M216A_TopModule(
 ////////////////////////////////////////////////////////////////////////////////////////////////////
     // Read reg arr stage
 
-    r_w_enable r_w_enable_inst (
-        .clk        (clk_i                  ),
-        .rst        (rst_i                  ),
-        .write_en   (write_en               ),
-        .read_en    (read_en                )
-    );
-
-    ram ram (
-        .clk        (clk_i                  ),
-        .rst        (rst_i                  ),
-        .write_en   (write_en               ),
-        .read_en    (read_en                ),
-        .addr_write (min_occupied_strip_id  ),
-        .data_in    (new_occupied_strip_width),
-        .addr_read1 (find_row_strip_id_1    ),
-        .addr_read2 (find_row_strip_id_2    ),
-        .addr_read3 (find_row_strip_id_3    ),
-        .data_out1  (occ_width_1_reg        ),
-        .data_out2  (occ_width_2_reg        ),
-        .data_out3  (occ_width_3_reg        )
-    );
-    /*
-    always @(posedge clk3) begin
+    always @(posedge clk_i) begin
         if (rst_i) begin
             occupied_width[0]   <= 8'd128;
             occupied_width[1]   <= 0;
@@ -227,68 +188,63 @@ module M216A_TopModule(
     end
 
     always @(*) begin
-        if (read_en) begin
-            occ_width_1_reg <= occupied_width[find_row_strip_id_1];
-            occ_width_2_reg <= occupied_width[find_row_strip_id_2];
-            occ_width_3_reg <= occupied_width[find_row_strip_id_3];
-        end
+        occ_width_1_reg <= occupied_width[find_row_strip_id_1];
+        occ_width_2_reg <= occupied_width[find_row_strip_id_2];
+        occ_width_3_reg <= occupied_width[find_row_strip_id_3];
     end
-    */
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
     // pipeline registers between read reg arr and min occupied width
 
     P1_Reg_5_bit read_arr_width_reg (
-        .clk        (clk3                   ),
+        .clk        (clk_i                  ),
         .rst        (rst_i                  ),
         .DataIn     (row_stage_width        ), 
         .DataOut    (read_arr_stage_width   )
     );
 
     P1_Reg_4_bit read_arr_str_id_1_reg (
-        .clk        (clk3                   ),
+        .clk        (clk_i                  ),
         .rst        (rst_i                  ),
         .DataIn     (find_row_strip_id_1    ), 
         .DataOut    (str_id_1               )
     );
 
     P1_Reg_4_bit read_arr_str_id_2_reg (
-        .clk        (clk3                   ),
+        .clk        (clk_i                  ),
         .rst        (rst_i                  ),
         .DataIn     (find_row_strip_id_2    ), 
         .DataOut    (str_id_2               )
     );
 
     P1_Reg_4_bit read_arr_str_id_3_reg (
-        .clk        (clk3                   ),
+        .clk        (clk_i                  ),
         .rst        (rst_i                  ),
         .DataIn     (find_row_strip_id_3    ), 
         .DataOut    (str_id_3               )
     );
-    /*
+
     P1_Reg_8_bit read_arr_occ_width_1_reg (
-        .clk        (clk3                   ),
+        .clk        (clk_i                  ),
         .rst        (rst_i                  ),
         .DataIn     (occ_width_1_reg        ), 
         .DataOut    (occ_width_1            )
     );
 
     P1_Reg_8_bit read_arr_occ_width_2_reg (
-        .clk        (clk3                   ),
+        .clk        (clk_i                  ),
         .rst        (rst_i                  ),
         .DataIn     (occ_width_2_reg        ), 
         .DataOut    (occ_width_2            )
     );
 
     P1_Reg_8_bit read_arr_occ_width_3_reg (
-        .clk        (clk3                   ),
+        .clk        (clk_i                  ),
         .rst        (rst_i                  ),
         .DataIn     (occ_width_3_reg        ), 
         .DataOut    (occ_width_3            )
     );
-    */
-    assign occ_width_1 = occ_width_1_reg;
-    assign occ_width_2 = occ_width_2_reg;
-    assign occ_width_3 = occ_width_3_reg;
+
     assign width_front = read_arr_stage_width;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -317,21 +273,21 @@ module M216A_TopModule(
     // pipeline registers between min occupied width and stage 5
 
     P1_Reg_4_bit  u_min_occupied_strip_id_s4 (
-        .clk        (clk4                       ),
+        .clk        (clk_i                      ),
         .rst        (rst_i                      ),
         .DataIn     (min_occupied_strip_id_s4   ),
         .DataOut    (min_occupied_strip_id_s5   )
     );
 
     P1_Reg_8_bit  u_min_occupied_strip_width_s4 (
-        .clk        (clk4                       ),
+        .clk        (clk_i                      ),
         .rst        (rst_i                      ),
         .DataIn     (min_occupied_strip_width_s4),
         .DataOut    (min_occupied_strip_width_s5)
     );
 
     P1_Reg_5_bit  u_width_in_s4 (
-        .clk        (clk4                       ),
+        .clk        (clk_i                      ),
         .rst        (rst_i                      ),
         .DataIn     (width_front                ),
         .DataOut    (width_in_s5                )
@@ -348,7 +304,7 @@ module M216A_TopModule(
     );
     
     Strike_Counter  u_Strike_Counter (
-        .clk            (clk1               ),
+        .clk            (clk_i              ),
         .rst            (rst_i              ),
         .strike_flag    (strike_flag_s5     ),
         .strike_count   (strike_count       )  
@@ -358,28 +314,28 @@ module M216A_TopModule(
     // pipeline registers between stage 5 and write array
 
     P1_Reg_4_bit  u_min_occupied_strip_id_s5 (
-        .clk        (clk1                       ),
+        .clk        (clk_i                      ),
         .rst        (rst_i                      ),            
         .DataIn     (min_occupied_strip_id_s5   ),
         .DataOut    (min_occupied_strip_id      )
     );
 
     P1_Reg_8_bit  u_min_occupied_strip_width_s5 (
-        .clk        (clk1                       ),
+        .clk        (clk_i                      ),
         .rst        (rst_i                      ),
         .DataIn     (min_occupied_strip_width_s5),
         .DataOut    (min_occupied_strip_width   )
     );
 
     P1_Reg_8_bit  u_new_occupied_strip_width_s5 (
-        .clk        (clk1                       ),
+        .clk        (clk_i                      ),
         .rst        (rst_i                      ),
         .DataIn     (new_occupied_strip_width_s5),
         .DataOut    (new_occupied_strip_width   )
     );
 
     P1_Reg_1_bit  u_strike_flag (
-        .clk        (clk1                       ),
+        .clk        (clk_i                      ),
         .rst        (rst_i                      ),
         .DataIn     (strike_flag_s5             ),
         .DataOut    (strike_flag                )
@@ -387,39 +343,39 @@ module M216A_TopModule(
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
     // write to register array
-    /*
-    always @(posedge clk2) begin
-        if (min_occupied_strip_id && (~rst_i) && write_en) begin
+
+    always @(posedge clk_i) begin
+        if (min_occupied_strip_id & (~rst_i)) begin
             occupied_width[min_occupied_strip_id] <= new_occupied_strip_width;
-        end
+        end  
     end
-    */
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
     // pipeline registers between write and index
 
     P1_Reg_4_bit P1_Reg_4_bit_inst1 (
-        .clk        (clk2                       ),
+        .clk        (clk_i                      ),
         .rst        (rst_i                      ), 
         .DataIn     (strike_count               ),
         .DataOut    (strike_counter_index       )
     );
 
     P1_Reg_4_bit P1_Reg_4_bit_inst2 (
-        .clk        (clk2                       ),
+        .clk        (clk_i                      ),
         .rst        (rst_i                      ), 
         .DataIn     (min_occupied_strip_id      ),
         .DataOut    (strip_ID_index             )
     );
 
     P1_Reg_8_bit P1_Reg_8_bit_inst1 (
-        .clk        (clk2                       ),
+        .clk        (clk_i                      ),
         .rst        (rst_i                      ), 
         .DataIn     (min_occupied_strip_width   ),
         .DataOut    (occupied_width_index)
     );
 
     P1_Reg_1_bit P1_Reg_1_bit_inst1 (
-        .clk        (clk2                       ),
+        .clk        (clk_i                      ),
         .rst        (rst_i                      ), 
         .DataIn     (strike_flag                ),
         .DataOut    (strike_flag_index          )
@@ -440,21 +396,21 @@ module M216A_TopModule(
     // pipeline registers between index and output
 
     P1_Reg_4_bit P1_Reg_4_bit_inst3 (
-        .clk        (clk3                       ),
+        .clk        (clk_i                      ),
         .rst        (rst_i                      ), 
         .DataIn     (strike_counter_index       ),
         .DataOut    (strike_counter_outstage    )
     );
 
     P1_Reg_8_bit P1_Reg_8_bit_inst2 (
-        .clk        (clk3                       ),        
+        .clk        (clk_i                      ),        
         .rst        (rst_i                      ), 
         .DataIn     (x_index                    ),
         .DataOut    (x_outstage                 )
     );
 
     P1_Reg_8_bit P1_Reg_8_bit_inst3 (
-        .clk        (clk3                       ),
+        .clk        (clk_i                      ),
         .rst        (rst_i                      ), 
         .DataIn     (y_index                    ),
         .DataOut    (y_outstage                 )
@@ -464,21 +420,21 @@ module M216A_TopModule(
     // output registers for x and y
 
     P1_Reg_4_bit P1_Reg_4_bit_inst4 (
-        .clk        (clk4                       ),
+        .clk        (clk_i                      ),
         .rst        (rst_i                      ), 
         .DataIn     (strike_counter_outstage    ),
         .DataOut    (strike_o                   )
     );
 
     P1_Reg_8_bit P1_Reg_8_bit_inst4 (
-        .clk        (clk4                       ),
+        .clk        (clk_i                      ),
         .rst        (rst_i                      ), 
         .DataIn     (x_outstage                 ),
         .DataOut    (index_x_o                  )
     );
 
     P1_Reg_8_bit P1_Reg_8_bit_inst5 (
-        .clk        (clk4                       ),
+        .clk        (clk_i                      ),
         .rst        (rst_i                      ), 
         .DataIn     (y_outstage                 ),
         .DataOut    (index_y_o                  )

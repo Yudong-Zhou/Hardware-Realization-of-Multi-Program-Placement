@@ -11,19 +11,13 @@ module Strike_Counter(
     input rst; //high active
 
     output reg [3:0] strike_count;
-
-    reg [1:0] flag_cache; // when flag_cache = 0, strike count + 1
     
-    always @(posedge clk) begin
+    always @(posedge clk or posedge rst) begin
         if (rst) begin 
             strike_count <= 0;
-            flag_cache <= 0;
         end
         else if(strike_flag) begin
-            if (flag_cache == 2'b00) begin 
-                strike_count <= strike_count + 1;
-            end
-            flag_cache <= flag_cache + 2'b01;
+            strike_count <= strike_count + 1;
         end
     end
 

@@ -1,5 +1,4 @@
-module Find_Row(clk, height_in, width_in, str_id_1, str_id_2, str_id_3);
-    input clk;
+module Find_Row(height_in, width_in, str_id_1, str_id_2, str_id_3);
     input [4:0] height_in, width_in;
     output reg [3:0] str_id_1, str_id_2, str_id_3;
 
