@@ -66,8 +66,6 @@ module M216A_TopModule(
     wire [7 : 0]    min_occupied_strip_width_s5;
     wire [3 : 0]    min_occupied_strip_id_s5; 
     wire [3 : 0]    min_occupied_strip_id;
-    wire [7 : 0]    min_occupied_strip_width;
-    wire            strike_flag;
     wire [7 : 0]    new_occupied_strip_width;
     wire [3 : 0]    strike_count;
 
@@ -94,14 +92,14 @@ module M216A_TopModule(
 ////////////////////////////////////////////////////////////////////////////////////////////////////
     // Input sampling stage
     
-    P1_Reg_5_bit height_in_reg (
+    P1_Reg_5_bit_async height_in_reg (
         .clk        (clk1           ),
         .rst        (rst_i          ), 
         .DataIn     (height_i       ), 
         .DataOut    (height_input   )
     );
     
-    P1_Reg_5_bit width_in_reg (
+    P1_Reg_5_bit_async width_in_reg (
         .clk        (clk1           ),
         .rst        (rst_i          ), 
         .DataIn     (width_i        ), 
@@ -133,7 +131,7 @@ module M216A_TopModule(
     );
 
     ram ram (
-        .clk        (clk_i                  ),
+        .clk        (clk_i && (clk2 || clk3)),
         .rst        (rst_i                  ),
         .write_en   (write_en               ),
         .read_en    (read_en                ),
@@ -175,21 +173,21 @@ module M216A_TopModule(
 ////////////////////////////////////////////////////////////////////////////////////////////////////
     // pipeline registers between min occupied width and stage 5
 
-    P1_Reg_4_bit  u_min_occupied_strip_id_s4 (
+    P1_Reg_4_bit_async  u_min_occupied_strip_id_s4 (
         .clk        (clk4                       ),
         .rst        (rst_i                      ),
         .DataIn     (min_occupied_strip_id_s4   ),
         .DataOut    (min_occupied_strip_id_s5   )
     );
 
-    P1_Reg_8_bit  u_min_occupied_strip_width_s4 (
+    P1_Reg_8_bit_async  u_min_occupied_strip_width_s4 (
         .clk        (clk4                       ),
         .rst        (rst_i                      ),
         .DataIn     (min_occupied_strip_width_s4),
         .DataOut    (min_occupied_strip_width_s5)
     );
 
-    P1_Reg_5_bit  u_width_in_s4 (
+    P1_Reg_5_bit_async  u_width_in_s4 (
         .clk        (clk4                       ),
         .rst        (rst_i                      ),
         .DataIn     (width_input                ),
@@ -216,14 +214,14 @@ module M216A_TopModule(
 ////////////////////////////////////////////////////////////////////////////////////////////////////
     // pipeline registers between stage 5 and write array
     
-    P1_Reg_4_bit  u_min_occupied_strip_id_s5 (
+    P1_Reg_4_bit_async  u_min_occupied_strip_id_s5 (
         .clk        (clk1                       ),
         .rst        (rst_i                      ),            
         .DataIn     (min_occupied_strip_id_s5   ),
         .DataOut    (min_occupied_strip_id      )
     );
 
-    P1_Reg_8_bit  u_new_occupied_strip_width_s5 (
+    P1_Reg_8_bit_async  u_new_occupied_strip_width_s5 (
         .clk        (clk1                       ),
         .rst        (rst_i                      ),
         .DataIn     (new_occupied_strip_width_s5),
@@ -253,21 +251,21 @@ module M216A_TopModule(
 ////////////////////////////////////////////////////////////////////////////////////////////////////
     // output registers for x and y
 
-    P1_Reg_4_bit P1_Reg_4_bit_inst4 (
+    P1_Reg_4_bit_async P1_Reg_4_bit_inst4 (
         .clk        (clk4                       ),
         .rst        (rst_i                      ), 
         .DataIn     (strike_count               ),
         .DataOut    (strike_o                   )
     );
 
-    P1_Reg_8_bit P1_Reg_8_bit_inst4 (
+    P1_Reg_8_bit_async P1_Reg_8_bit_inst4 (
         .clk        (clk4                       ),
         .rst        (rst_i                      ), 
         .DataIn     (x_index                    ),
         .DataOut    (index_x_o                  )
     );
 
-    P1_Reg_8_bit P1_Reg_8_bit_inst5 (
+    P1_Reg_8_bit_async P1_Reg_8_bit_inst5 (
         .clk        (clk4                       ),
         .rst        (rst_i                      ), 
         .DataIn     (y_index                    ),

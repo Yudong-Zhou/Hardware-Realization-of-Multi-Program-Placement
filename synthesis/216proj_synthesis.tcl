@@ -23,8 +23,11 @@ analyze -format verilog {Min_Occupied_Strip_Selector.v}
 analyze -format verilog {Min_Occupied_Width_No.v}
 analyze -format verilog {P1_Reg_1_bit.v}
 analyze -format verilog {P1_Reg_4_bit.v}
+analyze -format verilog {P1_Reg_4_bit_async.v}
 analyze -format verilog {P1_Reg_5_bit.v}
+analyze -format verilog {P1_Reg_5_bit_async.v}
 analyze -format verilog {P1_Reg_8_bit.v}
+analyze -format verilog {P1_Reg_8_bit_async.v}
 analyze -format verilog {r_w_en.v}
 analyze -format verilog {RAM.v}
 analyze -format verilog {Strike_Counter.v}
@@ -41,7 +44,7 @@ set_operating_conditions -min ff1p16vn40c -max ss0p95v125c
 
 # Describe the clock waveform & setup operating conditions
 set Tclk 10.0
-set TCU  0.1
+set TCU  0.05
 set IN_DEL 0.6
 set IN_DEL_MIN 0.3
 set OUT_DEL 0.6

@@ -30,7 +30,7 @@ module clk_div(
     reg         clk3;
     reg         clk4;
 
-    always @(posedge clk_in) begin
+    always @(posedge clk_in or posedge rst_in) begin
         if (rst_in) begin
             current_state = 2'b00;
             next_state    = 2'b00;
@@ -68,6 +68,13 @@ module clk_div(
                     clk2        = 1'b0;
                     clk3        = 1'b0;
                     clk4        = 1'b1;
+                end
+                default: begin
+                    next_state  = CLK4;
+                    clk1        = 1'b0;
+                    clk2        = 1'b0;
+                    clk3        = 1'b0;
+                    clk4        = 1'b0;
                 end
             endcase
             current_state = next_state;

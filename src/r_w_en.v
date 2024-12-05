@@ -15,21 +15,18 @@ module r_w_enable (
     output wire write_en,
     output wire read_en
 );
-    reg [2 : 0] counter;
+    reg [1 : 0] counter;
 
-    always @(negedge clk or posedge rst) begin
+    always @(posedge clk or posedge rst) begin
         if (rst) begin
-            counter = 1'b0;
+            counter <= 2'b00;
         end
         else begin
-            counter = counter + 1;
-            if (counter == 5) begin
-                counter = 1'b1;
-            end
+            counter <= counter + 1;
         end
     end
 
-    assign write_en = (counter == 3);
-    assign read_en  = (counter == 4);
+    assign write_en = (counter == 2'b10);
+    assign read_en  = (counter == 2'b11);
 
 endmodule

@@ -15,7 +15,7 @@ module Min_Occupied_Width_No (
 
     reg [1:0] occupied_width_no;
 
-    always @* begin
+    always @(*) begin
         if (occupied_width_1 > occupied_width_2) 
             occupied_width_no = (occupied_width_2 > occupied_width_3)? 2'd3 : 2'd2;
         else 

@@ -30,7 +30,7 @@ module ram #(
 
     reg [DATA_WIDTH - 1 : 0]    ram [0 : 13];
 
-    always @(posedge clk) begin
+    always @(posedge clk or posedge rst) begin
         if (rst) begin
             ram[0]  <= 8'd128;
             ram[1]  <= 8'b0;

@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : M216A_TopModule
+Version: M-2016.12-SP2
+Date   : Mon Dec  2 22:52:30 2024
+****************************************
+
+Library(s) Used:
+
+    saed32rvt_ff1p16vn40c (File: /w/apps2/public.2/tech/synopsys/32-28nm/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_ff1p16vn40c.db)
+
+Number of ports:                           32
+Number of nets:                           990
+Number of cells:                          834
+Number of combinational cells:            623
+Number of sequential cells:               211
+Number of macros/black boxes:               0
+Number of buf/inv:                        132
+Number of references:                      30
+
+Combinational area:               1446.079383
+Buf/Inv area:                      236.353930
+Noncombinational area:            1377.968812
+Macro/Black Box area:                0.000000
+Net Interconnect area:             564.229857
+
+Total cell area:                  2824.048195
+Total area:                       3388.278053
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  ---------
+M216A_TopModule                   2824.0482    100.0  1446.0794  1377.9688  0.0000  M216A_TopModule
+--------------------------------  ---------  -------  ---------  ---------  ------  ---------
+Total                                                 1446.0794  1377.9688  0.0000
+
+1

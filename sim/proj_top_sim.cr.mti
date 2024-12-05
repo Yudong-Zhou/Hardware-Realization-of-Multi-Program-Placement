@@ -82,19 +82,19 @@ Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 Top level modules:
 	Min_Occupied_Width_No
 
-} {} {}} E:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_8_bit.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_8_bit.v
-Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
--- Compiling module P1_Reg_8_bit
-
-Top level modules:
-	P1_Reg_8_bit
-
 } {} {}} E:/UCLA/Codes/zyd_github/HRMPP/src/Strike_Detector.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/HRMPP/src/Strike_Detector.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
 -- Compiling module Strike_Detector
 
 Top level modules:
 	Strike_Detector
+
+} {} {}} E:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_8_bit.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/HRMPP/src/P1_Reg_8_bit.v
+Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
+-- Compiling module P1_Reg_8_bit
+
+Top level modules:
+	P1_Reg_8_bit
 
 } {} {}} E:/UCLA/Codes/zyd_github/HRMPP/src/clk_div.v {1 {vlog -work work -vopt -stats=none E:/UCLA/Codes/zyd_github/HRMPP/src/clk_div.v
 Model Technology ModelSim SE-64 vlog 10.4 Compiler 2014.12 Dec  3 2014
