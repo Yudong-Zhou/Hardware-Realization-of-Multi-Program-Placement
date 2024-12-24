@@ -1,0 +1,75 @@
+# Reading D:/SOFTWARE/Modelsim/tcl/vsim/pref.tcl
+# //  ModelSim SE-64 10.4 Dec  3 2014 
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# OpenFile E:/UCLA/Codes/zyd_github/HRMPP/sim/proj_top_sim.mpf
+# Loading project proj_top_sim
+# Compile of Min_Occupied_Strip_Selector.v was successful.
+# Compile of Min_Occupied_Width_No.v was successful.
+# Compile of Strike_Counter.v was successful.
+# Compile of Strike_Detector.v was successful.
+# Compile of Find_Index.v was successful.
+# Compile of Find_Row.v was successful.
+# Compile of M216A_TB.v was successful.
+# Compile of clk_div.v was successful.
+# Compile of r_w_en.v was successful.
+# Compile of RAM.v was successful.
+# Compile of P1_Reg_8_bit.v was successful.
+# Compile of P1_Reg_1_bit.v was successful.
+# Compile of P1_Reg_4_bit.v was successful.
+# Compile of P1_Reg_5_bit.v was successful.
+# Compile of M216A_TopModule.v was successful.
+# 15 compiles, 0 failed with no errors.
+vsim -novopt work.M216A_TB
+# vsim -gui E:\UCLA\Codes\zyd_github\HRMPP\sim\proj_top_sim.mpf 
+# Start time: 19:48:19 on Dec 02,2024
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# 
+# Refreshing E:/UCLA/Codes/zyd_github/HRMPP/sim/work.M216A_TB
+# Loading work.M216A_TB
+# Refreshing E:/UCLA/Codes/zyd_github/HRMPP/sim/work.M216A_TopModule
+# Loading work.M216A_TopModule
+# Refreshing E:/UCLA/Codes/zyd_github/HRMPP/sim/work.P1_Reg_5_bit
+# Loading work.P1_Reg_5_bit
+# Refreshing E:/UCLA/Codes/zyd_github/HRMPP/sim/work.Find_Row
+# Loading work.Find_Row
+# Refreshing E:/UCLA/Codes/zyd_github/HRMPP/sim/work.P1_Reg_4_bit
+# Loading work.P1_Reg_4_bit
+# Refreshing E:/UCLA/Codes/zyd_github/HRMPP/sim/work.r_w_enable
+# Loading work.r_w_enable
+# Refreshing E:/UCLA/Codes/zyd_github/HRMPP/sim/work.ram
+# Loading work.ram
+# Refreshing E:/UCLA/Codes/zyd_github/HRMPP/sim/work.Min_Occupied_Width_No
+# Loading work.Min_Occupied_Width_No
+# Refreshing E:/UCLA/Codes/zyd_github/HRMPP/sim/work.Min_Occupied_Strip_Selector
+# Loading work.Min_Occupied_Strip_Selector
+# Refreshing E:/UCLA/Codes/zyd_github/HRMPP/sim/work.P1_Reg_8_bit
+# Loading work.P1_Reg_8_bit
+# Refreshing E:/UCLA/Codes/zyd_github/HRMPP/sim/work.Strike_Detector
+# Loading work.Strike_Detector
+# Refreshing E:/UCLA/Codes/zyd_github/HRMPP/sim/work.Strike_Counter
+# Loading work.Strike_Counter
+# Refreshing E:/UCLA/Codes/zyd_github/HRMPP/sim/work.P1_Reg_1_bit
+# Loading work.P1_Reg_1_bit
+# Refreshing E:/UCLA/Codes/zyd_github/HRMPP/sim/work.find_index
+# Loading work.find_index
+run -all
+# No of Strikes:  8
+# 
+# Congratulations: All tests passed
+# ** Note: $stop    : E:/UCLA/Codes/zyd_github/HRMPP/src/M216A_TB.v(104)
+#    Time: 1013 ns  Iteration: 1  Instance: /M216A_TB
+# Break in Module M216A_TB at E:/UCLA/Codes/zyd_github/HRMPP/src/M216A_TB.v line 104
+# End time: 19:57:32 on Dec 02,2024, Elapsed time: 0:09:13
+# Errors: 0, Warnings: 1
